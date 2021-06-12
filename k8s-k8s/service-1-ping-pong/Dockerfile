@@ -2,10 +2,12 @@ FROM python:rc-alpine3.13
 
 WORKDIR /opt/app
 
-COPY . .
-
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
+COPY . /app
+
+ENTRYPOINT [ "python" ]
+
+CMD [ "api.py" ]
