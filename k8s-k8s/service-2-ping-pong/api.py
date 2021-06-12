@@ -7,6 +7,12 @@ api = Api(app)
 
 url = 'http://localhost:5000/pong'
 
+@app.route('/home', methods=['GET'])
+def home():
+    return {
+       'status': 'true'
+       }
+
 @app.route('/ping', methods=['GET'])
 def ping():
     if request.method == 'GET':
