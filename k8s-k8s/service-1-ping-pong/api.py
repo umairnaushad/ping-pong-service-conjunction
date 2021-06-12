@@ -7,6 +7,10 @@ api = Api(app)
 
 url = 'http://localhost:5001/pong'
 
+@app.route('/')
+def welcome():
+    return "welcome to the service-1-ping-pong"
+
 @app.route('/about', methods=['GET'])
 def home():
     return {
@@ -31,4 +35,4 @@ def pong():
        }
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(host ='0.0.0.0', port = 5000, debug = True)
