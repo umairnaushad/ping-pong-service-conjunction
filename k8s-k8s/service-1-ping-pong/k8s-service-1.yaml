@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: service-1
-        image: umairnaushad/service-1-ping-pong:1.0.0
+        image: umairnaushad/service-1-ping-pong:1.0.1
         resources: 
           requests:
             cpu: "600m"
