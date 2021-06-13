@@ -5,7 +5,7 @@ import requests,json
 app = Flask(__name__)
 api = Api(app)
 
-url = 'http://localhost:5001/pong'
+url = 'http://service-2-ping-pong-svc:5001/pong'
 
 @app.route('/')
 def welcome():
