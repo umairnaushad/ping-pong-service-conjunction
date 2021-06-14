@@ -2,6 +2,14 @@ import json
 
 # import requests
 
+def lambda_handler_ping(event, context):
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            'app': 'lambda ping pong',
+            'endpoint': 'ping'
+        }),
+    }
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
