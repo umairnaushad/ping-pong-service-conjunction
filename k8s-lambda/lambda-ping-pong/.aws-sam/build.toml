@@ -6,6 +6,6 @@ codeuri = "E:\\Github\\ping-pong-service-conjunction\\k8s-lambda\\lambda-ping-po
 runtime = "python3.7"
 source_md5 = ""
 packagetype = "Zip"
-functions = ["PingFunction", "PongFunction"]
+functions = ["PingFunction", "PongFunction", "AboutFunction"]
 
 [layer_build_definitions]
