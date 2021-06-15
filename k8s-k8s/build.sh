@@ -4,6 +4,9 @@ export SERVICE_2_PORT=5002
 export SERVICE_1_URL=http://service-1-ping-pong-svc:5001/
 export SERVICE_1_URL=http://service-2-ping-pong-svc:5002/
 
+
+kubectl delete -f service-1-ping-pong/k8s-service-1.yaml,service-2-ping-pong/k8s-service-2.yaml
+
 echo "####################################################################"
 echo "######################## Building Service 1 ########################"
 echo "####################################################################"
@@ -29,5 +32,4 @@ cd ..
 echo "####################################################################"
 echo "####################### Deploy on Kubernetes #######################"
 echo "####################################################################"
-kubectl delete -f service-1-ping-pong/k8s-service-1.yaml,service-2-ping-pong/k8s-service-2.yaml
 kubectl apply -f service-1-ping-pong/k8s-service-1.yaml,service-2-ping-pong/k8s-service-2.yaml

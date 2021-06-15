@@ -17,7 +17,7 @@ def welcome():
 @app.route('/ping', methods=['GET'])
 def ping():
     if request.method == 'GET':
-        data = {'service': 'lambda'}
+        data = {'service': 'k8s-service-2'}
         response = requests.post(
             SERVICE_URL+"pong", data=json.dumps(data),
             headers={'Content-Type': 'application/json'}
@@ -27,7 +27,7 @@ def ping():
 @app.route("/pong", methods=['POST'])
 def pong():
    return {
-       'app': 'lambda ping pong',
+       'app': 'k8s service 2 ping pong',
        'endpoint': 'pong'
     }
 
