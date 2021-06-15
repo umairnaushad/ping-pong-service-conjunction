@@ -5,7 +5,7 @@ import requests,json, os
 app = Flask(__name__)
 api = Api(app)
 
-SERVICE_1_PORT = os.getenv('SERVICE_1_PORT')
+SERVICE_1_PORT = int(os.getenv('SERVICE_1_PORT'))
 SERVICE_2_URL = os.getenv('SERVICE_2_URL') #'http://service-2-ping-pong-svc:5001/pong'
 
 @app.route('/')
