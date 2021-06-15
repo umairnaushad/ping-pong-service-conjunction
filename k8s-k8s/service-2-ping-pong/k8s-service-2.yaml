@@ -51,11 +51,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-1-ping-pong-svc
+  name: service-2-ping-pong-svc
   namespace: devops-ping-pong
 spec:
   selector:
-    app: service-1
+    app: service-2
   type: NodePort
   ports:
     - name: http
