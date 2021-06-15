@@ -5,7 +5,7 @@ import requests,json, os
 app = Flask(__name__)
 api = Api(app)
 
-url = USER = os.getenv('SERVICE_2_ENDPOINT') #'http://127.0.0.1:5001/pong'
+SERVICE_URL = os.getenv('SERVICE_URL')
 
 @app.route('/')
 def welcome():
@@ -17,19 +17,19 @@ def welcome():
 @app.route('/ping', methods=['GET'])
 def ping():
     if request.method == 'GET':
-        data = {'service': 'k8s'}
+        data = {'service': 'k8s-service'}
         response = requests.post(
-            url+"pong", data=json.dumps(data),
+            SERVICE_URL+"pong", data=json.dumps(data),
             headers={'Content-Type': 'application/json'}
         )
-        return response.content
+    return response.content
 
 @app.route("/pong", methods=['POST'])
 def pong():
    return {
        'app': 'k8s ping pong',
-       'endpoint': '/pong'
+       'endpoint': 'pong'
     }
 
 if __name__ == '__main__':
-    app.run(host ='0.0.0.0', port = 5000, debug = True)
+    app.run(host ='0.0.0.0', port = 5000)
