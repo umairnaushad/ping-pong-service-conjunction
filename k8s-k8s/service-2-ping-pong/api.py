@@ -1,11 +1,11 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
-import requests, json, os
+import requests,json, os
 
 app = Flask(__name__)
 api = Api(app)
 
-SERVICE_URL = os.getenv('SERVICE_URL') #'http://service-1-ping-pong-svc:5000/pong'
+SERVICE_URL = os.getenv('SERVICE_URL') #'http://service-1-ping-pong-svc:5001/pong'
 
 @app.route('/')
 def welcome():
