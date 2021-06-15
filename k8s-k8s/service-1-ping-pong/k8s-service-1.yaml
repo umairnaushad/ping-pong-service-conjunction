@@ -33,14 +33,14 @@ spec:
             memory: "2000Mi"
         readinessProbe:
           httpGet:
-            path: /about
+            path: /
             port: 5000
           initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 3
         livenessProbe:
           httpGet:
-            path: /about
+            path: /
             port: 5000
           initialDelaySeconds: 30
           periodSeconds: 10
