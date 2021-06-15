@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: devops
+  name: devops-ping-pong
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-2-ping-pong-dep
-  namespace: devops
+  namespace: devops-ping-pong
 spec:
   replicas: 1
   selector:
@@ -21,6 +21,9 @@ spec:
       containers:
       - name: service-2
         image: umairnaushad/service-2-ping-pong:1.0.0
+        env:
+        - name: SERVICE_URL
+          value: "http://service-1-ping-pong-svc:5001/"
         resources: 
           requests:
             cpu: "600m"
@@ -31,25 +34,25 @@ spec:
         readinessProbe:
           httpGet:
             path: /about
-            port: 5002
+            port: 5000
           initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 3
         livenessProbe:
           httpGet:
             path: /about
-            port: 5002
+            port: 5000
           initialDelaySeconds: 30
           periodSeconds: 10
           failureThreshold: 3
         ports:
-        - containerPort: 5002
+        - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: service-2-ping-pong-svc
-  namespace: devops
+  namespace: devops-ping-pong
 spec:
   selector:
     app: service-2
@@ -57,5 +60,5 @@ spec:
   ports:
     - name: http
       port: 5002
-      targetPort: 5002
+      targetPort: 5000
       nodePort: 32102

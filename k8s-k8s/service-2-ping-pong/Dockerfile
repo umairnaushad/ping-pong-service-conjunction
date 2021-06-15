@@ -4,9 +4,11 @@ WORKDIR /opt/app
 
 COPY . .
 
+ENV SERVICE_URL="None"
+
 RUN pip install -r requirements.txt
 
-EXPOSE 5002
+EXPOSE 5000
 
 ENTRYPOINT [ "python" ]
 
