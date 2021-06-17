@@ -1,4 +1,6 @@
-import json
+import json, os, requests
+
+SERVICE_URL = os.getenv('SERVICE_URL')
 
 def lambda_handler_ping(event, context):
     return {
