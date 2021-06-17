@@ -16,6 +16,9 @@ Resources:
         CodeUri: ping_pong/
         Handler: app.lambda_handler_ping
         Runtime: python3.7
+        Environment:
+          Variables:
+            SERVICE_URL: "http://10.152.20.166:32103/"
         Events:
           Pong:
             Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
