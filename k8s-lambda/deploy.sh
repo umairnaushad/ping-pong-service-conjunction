@@ -1,16 +1,14 @@
-#!/bin/sh
 
 echo "####################################################################"
-echo "########################### Building k8s ###########################"
+echo "####################### Deploy on Kubernetes #######################"
 echo "####################################################################"
-cd k8s-lambda/k8s-ping-pong
-docker build -t umairnaushad/k8s-ping-pong:1.0.1 .
-docker push umairnaushad/k8s-ping-pong:1.0.1
+cd k8s-lambda
+kubectl apply -f k8s-ping-pong/k8s.yaml
 cd ..
 
 echo "####################################################################"
-echo "####################### Building Service 2 #########################"
+echo "####################### Deploy Lambda #######################"
 echo "####################################################################"
 cd lambda-ping-pong
-sam build
-cd ..
+sam local start-api -p 5004
+#sam deploy --guided
