@@ -1,7 +1,7 @@
 # ping-pong-service-conjunction
 (k8s and lambda)
 The repository containts two projects. One is used to deploy both python backend servies on k8s. Second one is used to deploy one service on k8s and second service on AWS lanbda. Two clone to local machine:
-git clone https://github.com/umairnaushad/ping-pong-service-conjunction.git
+<br> git clone https://github.com/umairnaushad/ping-pong-service-conjunction.git
 
 ## Pre-requisites
 Make sure that you have following installer on test deployment machine
@@ -33,12 +33,7 @@ This directory contains two projects service-1-ping-pong and service-2-ping-pong
 - kubectl apply -f service-1-ping-pong/k8s-service-1.yaml,service-2-ping-pong/k8s-service-2.yaml
 
 ### 3. Testing the project
-- curl http://127.0.0.1:5001/
-- curl http://127.0.0.1:5001/pong -X POST
-- curl http://127.0.0.1:5001/ping
-- curl http://127.0.0.1:5002/
-- curl http://127.0.0.1:5002/pong -X POST
-- curl http://127.0.0.1:5002/ping
+To test both services on kubernetes use bash file "test.sh"
 
 ### 4. For CI/CD
 To build  both services on kubernetes use bash file "build.sh"
@@ -61,12 +56,7 @@ This directory contains two projects k8s-ping-pong and lambda-ping-pong.
 - curl http://127.0.0.1:5004/
 
 ### 3. Testing the project
-- curl http://127.0.0.1:5003/
-- curl http://127.0.0.1:5003/pong -X POST
-- curl http://127.0.0.1:5003/ping
-- curl http://127.0.0.1:5004/
-- curl http://127.0.0.1:5004/pong -X POST
-- curl http://127.0.0.1:5004/ping
+To test both services use bash file "test.sh"
 
 ### 4. For CI/CD
 To build  both services on kubernetes use bash file "build.sh"
