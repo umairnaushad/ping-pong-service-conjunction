@@ -4,7 +4,7 @@ The repository containts two projects. One is used to deploy both python backend
 <br> git clone https://github.com/umairnaushad/ping-pong-service-conjunction.git
 
 ## Pre-requisites
-Make sure that you have following installer on test deployment machine
+Make sure that you have following installed on test deployment machine
 - docker
 - kubernetes
 - python 3.7
